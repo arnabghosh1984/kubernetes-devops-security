@@ -40,7 +40,7 @@ stage('SonarQube - SAST') {
         }
         timeout(time: 1, unit: 'MINUTES') {
           script {
-            waitForQualityGate abortPipeline: true
+            waitForQualityGate abortPipeline: false
           }
         }
       }
