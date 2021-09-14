@@ -47,14 +47,14 @@ stage('Vulnerability Scan - Docker') {
           "Dependency Scan": {
             sh "mvn dependency-check:check"
           },
-          "Trivy Scan": {
-            sh "bash trivy-docker-image-scan.sh"
-          }
+         // "Trivy Scan": {
+         //   sh "bash trivy-docker-image-scan.sh"
+         // }
         )
       }
     }
 
-    
+
     stage('Docker Build and Push') {
       steps {
         withDockerRegistry([credentialsId: "docker-hub", url: ""]) {
