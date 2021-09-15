@@ -63,7 +63,7 @@ stage('Vulnerability Scan - Docker') {
         withDockerRegistry([credentialsId: "docker-hub", url: "https://index.docker.io/v1/"]) {
           sh 'printenv'
           sh 'sudo docker build -t arnabghosh1984/numeric-app:""$GIT_COMMIT"" .'
-          sh 'sudo docker push arnabghosh1984/numeric-app:""$GIT_COMMIT""'
+          sh ' docker push arnabghosh1984/numeric-app:""$GIT_COMMIT""'
         }
       }
     }
