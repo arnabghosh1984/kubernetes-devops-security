@@ -149,11 +149,14 @@ stage('Vulnerability Scan - Docker') {
         }
       }
     }
+
+
+    
   }
     
     
 
-  }
+  
   
   
   
