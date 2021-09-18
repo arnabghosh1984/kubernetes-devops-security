@@ -161,7 +161,7 @@ stage('Vulnerability Scan - Docker') {
   }
 }
 
-stages {
+stage {
     stage('Testing Slack') {
       steps {
         sh 'exit 0'
