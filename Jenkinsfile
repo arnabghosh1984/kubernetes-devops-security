@@ -1,3 +1,6 @@
+@Library('slack') _
+
+
 pipeline {
   agent any
 
@@ -158,6 +161,15 @@ stage('Vulnerability Scan - Docker') {
   }
 }
 
+stages {
+    stage('Testing Slack') {
+      steps {
+        sh 'exit 0'
+      }
+    }
+
+  }
+
 
 
   }
@@ -172,6 +184,10 @@ stage('Vulnerability Scan - Docker') {
       jacoco execPattern: 'target/jacoco.exec'
       dependencyCheckPublisher pattern: 'target/dependency-check-report.xml'
       publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'owasp-zap-report', reportFiles: 'zap_report.html', reportName: 'OWASP ZAP HTML Report', reportTitles: 'OWASP ZAP HTML Report'])
+    
+// Use sendNotifications.groovy from shared library and provide current build result as parameter    
+      sendNotification currentBuild.result
+
     }
 
     // success {
