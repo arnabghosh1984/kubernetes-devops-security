@@ -162,13 +162,6 @@ stage('Vulnerability Scan - Docker') {
 }
 
 
-    stage('Testing Slack') {
-      steps {
-        sh 'exit 0'
-      }
-    }
-
-
     stage('K8S CIS Benchmark') {
       steps {
         script {
