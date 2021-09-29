@@ -1,4 +1,4 @@
-########################### Update vars/sendNotification.groovy ########################### 
+// Update vars/sendNotification.groovy 
 
 def call(String buildStatus = 'STARTED') {
  buildStatus = buildStatus ?: 'SUCCESS'
@@ -155,4 +155,4 @@ def call(String buildStatus = 'STARTED') {
 
 }
 
-########################### Update vars/sendNotification.groovy ########################### 
+// vars/sendNotification.groovy ########################### 
